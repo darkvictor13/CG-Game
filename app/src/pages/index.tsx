@@ -1,10 +1,13 @@
 import * as THREE from "three";
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Canvas } from "@react-three/fiber";
 import Box from "components/box";
 import useWindowDimensions from "hooks/useWindowDimension";
+import Ball from "components/ball";
+import { OrbitControls } from "@react-three/drei";
+import Player from "components/player";
+import { Physics } from "@react-three/cannon";
 
 export default function Home() {
   const { width, height } = useWindowDimensions();
@@ -18,16 +21,19 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.webGlDiv}>
           <Canvas>
-            <ambientLight color="white" />
-            <perspectiveCamera
-              fov={45}
-              aspect={width && height ? width / height : 1}
-              near={0.1}
-              far={1000}
-              position={[0, 0, 0]}
-            />
-            <gridHelper />
-            <Box />
+            <Physics>
+              <ambientLight color="white" />
+              <perspectiveCamera
+                fov={45}
+                aspect={width && height ? width / height : 1}
+                near={0.1}
+                far={1000}
+                position={[0, 0, 0]}
+              />
+              <OrbitControls />
+              <gridHelper />
+              <Player />
+            </Physics>
           </Canvas>
         </div>
       </main>
