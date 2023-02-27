@@ -1,8 +1,4 @@
-import { Box, Line } from "@react-three/drei";
-import { ThreeElements } from "@react-three/fiber";
-
-//const TABLE_SIZE = 10;
-//const TABLE_HEIGHT = 0.1;
+import { Box } from "@react-three/drei";
 
 export default function Table(props: {
   tableSize: number;

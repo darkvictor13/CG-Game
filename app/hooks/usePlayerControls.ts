@@ -9,20 +9,20 @@ export type PlayerControls = {
 
 function getPlayerControlsField(key: string): keyof PlayerControls {
   switch (key) {
-    case "ArrowLeft" || "a" || "A":
+    case "ArrowLeft":
       return "left";
 
-    case "ArrowRight" || "d" || "D":
+    case "ArrowRight":
       return "right";
 
-    case "ArrowUp" || "w" || "W":
+    case "ArrowUp":
       return "up";
 
-    case "ArrowDown" || "s" || "S":
+    case "ArrowDown":
       return "down";
 
     default:
-      return "left";
+      return "down";
   }
 }
 
