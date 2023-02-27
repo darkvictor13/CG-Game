@@ -83,6 +83,7 @@ export default function GameLogic(props: {
       }
     }
 
+    // detect collision with table
     if (
       (ballPosition.x > tableHitBox && ballVelocity.x > 0) ||
       (ballPosition.x < -tableHitBox && ballVelocity.x < 0)

@@ -24,7 +24,7 @@ export default function Game() {
             }}
           >
             <GameLogic
-              tableSize={10}
+              tableSize={15}
               tableHeight={0.1}
               ballRadius={0.25}
               velocity={0.1}
